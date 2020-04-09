@@ -1,0 +1,44 @@
+*{
+    font-family: Arial;
+    font-weight: 100;
+    margin: 0;
+    Box-sizing: border-box;
+    color: white;
+}
+.headline{
+    background-color: salmon;
+    padding: 40px;
+
+}
+.tap_font{
+    color: white;
+    font-size: medium;
+    padding-left: 50px;
+    position: relative;
+    top: 32px;
+}
+.home_tap_font{    
+    color: white;
+    font-size: medium;
+    font-weight: 800;
+    padding-left: 50px;
+    position: relative;
+    top: 32px;
+}
+a{
+    text-decoration: none;
+}
+.detail{
+    background-color: salmon;
+    line-height: 2;
+    text-align: center;
+    padding: 50px;
+    
+}
+footer{
+    height: 50px;
+    color: white;
+    background-color: salmon;
+    text-align: center;
+    padding: 50px;
+}

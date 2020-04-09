@@ -1,0 +1,154 @@
+*{
+    font-family: Arial;
+    font-weight: 100;
+    margin: 0;
+    Box-sizing: border-box;
+}
+.headline{
+    background-color: salmon;
+    padding: 40px;
+    width: 1900px;
+    position: fixed;
+    z-index: 20;
+}
+.tap_font{
+    color: white;
+    font-size: medium;
+    padding-left: 50px;
+    position: relative;
+    top: 32px;
+}
+.home_tap_font{    
+    color: white;
+    font-size: medium;
+    font-weight: 800;
+    padding-left: 50px;
+    position: relative;
+    top: 32px;
+}
+a{
+    text-decoration: none;
+}
+.me {
+    position: relative;
+    top: 150px;
+    left: 200px;
+}
+.namefont{
+    font-family: -apple-system;
+    color: salmon;
+    font-size: 200px;
+    font-weight: 800;
+    position: relative;
+    bottom: 150px;
+    left: 50px;   
+    opacity: 0.8;
+}
+.info-font1 {
+    font-weight: 500;
+    text-align: right;
+    width: 1000px;
+    position: relative;
+    bottom: 350px;
+    left: 700px;  
+    line-height: 2;
+}
+.dot{
+    color: grey;
+    font-size: 50px;
+    text-align: center;
+    position: relative;
+    bottom: 200px;
+}
+.head-font{
+    color: salmon;
+    font-size: 80px;
+    font-weight: 700;
+}
+.my{
+    position: relative;
+    left: 200px;
+    bottom: 100px;
+}
+.img{
+    width: 400px;
+    padding: 50px;
+}
+div .threeimg{
+    text-transform: uppercase ;
+    text-align: center;
+}
+ .content-font{
+    text-align: center;
+    font-size: xx-large;
+    font-weight: bolder;
+    color: grey;
+}
+ .detail{
+    padding: 0 160px;
+}
+.info{
+    text-align: center;
+    font-size: medium;
+    font-weight: normal;
+    color: grey;
+}
+.info-font{
+    padding: 0 160px;
+    position: relative;
+    bottom: 30px;
+    right: 20px;
+}
+.tmi{    
+    position: relative;
+    left: 200px;
+    top: 100px;
+}
+.coffee{
+    text-align: left;
+    width: 400px;
+    position: relative;
+    top: 50px;
+    left: 200px;
+}
+.overflow{
+        position: relative;
+        top: 150px;
+        width: 1900px;
+        height: 500px;
+        overflow: auto;
+}
+footer{
+    position: relative;
+    top: 200px;
+    width: 1900px;
+    height: 50px;
+    color: white;
+    background-color: salmon;
+    text-align: center;
+    padding: 50px;
+}
+.overflow-font{
+    position: relative;
+    top: 50px;
+    left: 200px;
+    color: grey;
+
+
+}
+.bomun{
+    font-size: xx-large;
+    font-weight: bolder;
+    color: salmon;
+    position: relative;
+    top: 50px;
+    left: 200px;
+    margin: 20px auto;
+}
+.bab{
+    width: 400px;
+    position: relative;
+    top: 50px;
+    left: 200px;
+}
+
