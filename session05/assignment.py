@@ -9,7 +9,7 @@ class Fourcal:
         self.div_num = 0
     
     def add(self, a, b):
-        
+        self.add_num += 1
         return a+b
     def sub(self, a, b):
         self.sub_num += 1
@@ -25,14 +25,15 @@ class Fourcal:
         return a/b      
 
     def Showcount(self):
-        print("덧셈 :" %self.add_num)
-        print("뺄셈 :" %self.sub_num)
-        print("곱셈 :" %self.mul_num)
-        print("나눗셈 :" %self.div_num)
+        
+        print("덧셈 :", self.add_num)
+        print("뺄셈 :", self.sub_num)
+        print("곱셈 :", self.mul_num)
+        print("나눗셈 :", self.div_num)
 
     
 
 calculator1 = Fourcal("박수민", 22, "korea uiversity")
-print(calculator1.name, calculator1.age, calculator1.school)
-print(calculator1.add(2,5),calculator1.div(2,4))
+
+calculator1.add(4,2)
 calculator1.Showcount()
