@@ -23,6 +23,7 @@ gugudan_odd_or_even(3)
 print(gugudan_odd_or_even)
 
 # 실습 3번
+print('실습 3번')
 def gugudan_input(num):
     i= 1
     while i <= num:
@@ -30,6 +31,6 @@ def gugudan_input(num):
             print("%d*%d" % (i, j))
         i+=1
 
-gugudan_input(5)
+gugudan_input(3)
 print(gugudan_input)
 
