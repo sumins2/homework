@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% for entertain_title_num in entertain_title %}
+        <a href="{% url 'detail' entertain_title_num.pk %}"> {{entertain_title_num.title}} </a>
+    <br>
+    {% endfor %}
+    
+</body>
+</html>
