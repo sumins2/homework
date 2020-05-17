@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'result.css' %}">
+
+</head>
+<body>
+    <div class="text_box">
+    {{text}}
+    </div>
+    <div class="detail">
+        <div class="total_len_box">
+            공백포함
+            <p class="total_len_text">{{total_len}} </p>
+            
+        </div>
+        <div class="no_blank_len_box">
+            공백제외
+            <p class="no_blank_len_text"> {{no_blank_len}} </p>
+        </div>
+        <div class="word_num_box">
+            단어 수
+            <p class="word_num_text"> {{number_of_words}} </p>
+        </div>
+    </div>
+    
+     
+
+</body>
+</html>
