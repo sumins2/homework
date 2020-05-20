@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'detail.css' %}">
+    <title>detail</title>
+</head>
+<body>
+    <h1>{{detail_of_post.title}}</h1>
+    <h3>{{detail_of_post.content}}</h3>
+    <h6>{{detail_of_post.date}}</h6>
+    <div class="flex">
+        <a href="{% url 'home' %}">home</a>
+        <a href="{% url 'edit' detail_of_post.pk %}">edit</a>
+        <a href="{% url 'delete' detail_of_post.pk %}">delete</a>
+    </div>
+</body>
+</html>
