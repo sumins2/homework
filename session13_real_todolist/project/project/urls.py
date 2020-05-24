@@ -24,4 +24,5 @@ urlpatterns = [
     path('edit/<int:name_of_pk>', views.edit, name='edit'),
     path('detail/<int:name_of_pk>', views.detail, name='detail'),
     path('delete/<int:name_of_pk>', views.delete, name='delete'),
+    path('comment_delete/<int:pk_of_comment>/<int:post_pk>', views.comment_delete, name='comment_delete'),
 ]

@@ -8,3 +8,7 @@ class post(models.Model):
 
     def __str__(self):
         return self.title
+
+class comment(models.Model):
+    post_that_i_wrote_a_comment = models.ForeignKey(post, on_delete=models.CASCADE, related_name='comments')
+    content = models.TextField()

@@ -1,3 +1,5 @@
+{% extends 'base.html' %}
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,6 +18,19 @@
         <a href="{% url 'home' %}">home</a>
         <a href="{% url 'edit' detail_of_post.pk %}">edit</a>
         <a href="{% url 'delete' detail_of_post.pk %}">delete</a>
+    {% for i in comment_of_post %}
+        <p>{{i.content}}</p>
+        <br>
+        <a href="{% url 'comment_delete' i.pk detail_of_post.pk %}">댓글삭제하기</a>
+    {% endfor %}
+    <form method="POST">
+        {% csrf_token %}
+        <input name="suminbest" placeholder="댓글을 입력해주세요">
+        <button type="submit">댓글 쓰기</button>
+    </form> 
+    
+    
     </div>
+    {% endblock %}
 </body>
 </html>
