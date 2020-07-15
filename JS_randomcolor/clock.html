@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="now"></h1>
+
+    <script>
+    const clockContent = document.querySelector('.now');
+    
+
+    const getTime = () => {
+        const date = new Date();
+        let hour = date.getHours();
+        let minutes = date.getMinutes();
+        let seconds = date.getSeconds();
+
+        hour = hour < 10 ? '0'+ hour : hour
+        minutes = minutes < 10 ? '0' + minutes : minutes
+        seconds = seconds < 10 ? '0' + seconds : seconds
+
+        const time = hour +'시' + minutes +'분' + seconds +'초'
+        console.log(time)
+        clockContent.innerText = time;
+
+    }
+
+    const initTime = () => {
+        getTime();
+        setInterval(getTime, 1000);
+    };
+    initTime();
+    
+    </script>
+</body>
+</html>

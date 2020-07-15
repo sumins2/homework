@@ -17,9 +17,12 @@
         <div class="list_flex"> 
             <div class="title_flex">
                 <a class="title" href="{% url 'detail' post.pk %}"> {{post.title}} </a>
+
             </div>
             <div class="single_flex" >
+                작성자 : {{post.author}}
                 {{post.date}}까지
+                
             </div>
             <br>
         </div>

@@ -17,12 +17,18 @@ from django.contrib import admin
 from django.urls import path
 from app import views
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
     path('new/', views.new, name = 'new'),
     path('edit/<int:name_of_pk>', views.edit, name='edit'),
+    path('edit_comment/<int:post_pk>/<int:pk_of_commen_pk>', views.edit_comment, name="edit_comment"),
     path('detail/<int:name_of_pk>', views.detail, name='detail'),
     path('delete/<int:name_of_pk>', views.delete, name='delete'),
     path('comment_delete/<int:pk_of_comment>/<int:post_pk>', views.comment_delete, name='comment_delete'),
+    path('registration/signup',views.signup, name='signup'),
+    path('registration/logout',views.logout, name='logout'),
+    path('registration/login',views.login, name='login'),
+   
 ]
