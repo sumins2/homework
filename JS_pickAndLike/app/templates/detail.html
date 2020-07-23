@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div>
+    <div>
+      <div>{{ post.title }}</div>
+      <div>{{ post.content }}</div>
+    </div>
+    <a href="{% url 'home' %}">홈으로</a>
+
+    {% if user.is_authenticated and post.author.pk == user.pk %}
+    <a href="{% url 'edit' post.pk %}">수정하기</a>
+    <a href="{% url 'delete' post.pk %}">삭제하기</a>
+    {% endif %}
+
+    {% for comment in post.comments.all %}
+      <li>{{ comment.content }}</li>
+      {% if user.is_authenticated and comment.author.pk == user.pk %}
+      <a href="{% url 'delete_comment' post.pk comment.pk %}">댓글삭제</a>
+      {% endif %}
+    {% endfor %}
+
+    {% if user.is_authenticated %}
+    <form method="POST">
+      {% csrf_token %}
+      <input type="text" name="content" placeholder="댓글을 입력하세요">
+      <button type="submit">댓글 쓰기</button>
+    </form>
+
+    <button id="like-button" onclick="like()">좋아요</button>
+    <button id="pick-button" onclick="pick()">찜하기</button>
+    <div id="like-count"> 좋아요 {{ post.likes.count }}개 </div>
+    {% endif %}
+  </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+      const likeButton = document.getElementById("like-button");
+      const pickButton = document.getElementById("pick-button");
+      const likeCount = document.getElementById("like-count");
+      const postTitle = document.querySelector(".post_title");
+      const postContent = document.querySelector(".post_content");
+
+      const check = () => {
+        axios
+          .post("/clickedLike", { post_pk: "{{post.pk}}" })
+          .then((res) => {
+            if (res.data.existing) {
+              likeButton.style.color = "red";
+            } else {
+              likeButton.style.color = "black";
+            }
+          })
+          .catch((error) => console.error(error));
+
+        axios
+          .post("/clickedPick", { post_pk: "{{post.pk}}" })
+          .then((res) => {
+            if (res.data.existing) {
+              postTitle.style.color = "blue";
+              postContent.style.color = "blue";
+              pickButton.style.color = "blue";
+            } else {
+              postTitle.style.color = "black";
+              postContent.style.color = "black";
+              pickButton.style.color = "black";
+            }
+          })
+          .catch((error) => console.error(error));
+      };
+
+      const like = () => {
+        axios
+          .post("/like", { post_pk: "{{post.pk}}" })
+          .then((res) => {
+            if (res.data.check) {
+              likeButton.style.color = "red";
+            } else {
+              likeButton.style.color = "black";
+            }
+            likeCount.innerHTML = "좋아요 " + res.data.like_count + " 개";
+          })
+          .catch((error) => console.error(error));
+      };
+
+      const pick = () => {
+        axios
+          .post("/pick", { post_pk: "{{post.pk}}" })
+          .then((res) => {
+            if (res.data.check) {
+              pickButton.style.color = "blue";
+            } else {
+              pickButton.style.color = "black";
+            }
+          })
+          .catch((error) => console.error(error));
+      };
+
+      function init() {
+        check();
+      }
+      init();
+    </script>
+  {% endblock content %}
